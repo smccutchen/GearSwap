@@ -1,20 +1,9 @@
-# FFXI GearSwap
-
-These files are used to help change gear while playing Final Fantasy XI.  They are specifically tuned for my characters, Soverance and Monarc, though you can easily modify them to work for your characters as well.
-
-To use these files requires Windower, a third-party application to interface with FFXI.  Specifically, this directory reflects the following directory on your local system:
-
-..\Windower\addons\GearSwap\data
-
-Check out the beta examples and instructions in the GearSwap install directory for more information.
+This is where user .lua files go. Check out the beta examples and instructions for more information.
 
 Be aware of four things:
-
 1) If Gearswap fails to execute a command and does not detect this, it will currently block all input until it is reloaded.
 2) verify_equip() is not very robust, and in Delve it tends to not be usable. cast_delay() is recommended instead.
-3) Logging is on by default. You can turn it off towards the top of gearswap.
-
-Basic function scaffolding for a new file is shown below:
+3) Logging is on at the moment, so that's what the log files are. You can turn it off towards the top of gearswap.
 
 -----------------------------------------------------------------------------------
 
