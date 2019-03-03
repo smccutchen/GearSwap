@@ -1,10 +1,14 @@
 # FFXI GearSwap
 
-These files are used to help change gear while playing Final Fantasy XI.  They are specifically tuned for my characters, Soverance and Monarc, though you can easily modify them to work for your characters as well.
+These files are used to help change gear while playing Final Fantasy XI.  They are specifically tuned for my characters, Soverance and Monarc on the Siren server, though you can easily modify them to work for your characters as well.
 
 To use these files requires Windower, a third-party application to interface with FFXI.  Specifically, this directory reflects the following directory on your local system:
 
 ..\Windower\addons\GearSwap\data
+
+If you're new to GearSwap, you can get a quick crash course from this reddit post:
+
+https://www.reddit.com/r/ffxi/comments/at3bxq/gearswap_for_idiots/egyoivh/
 
 Check out the beta examples and instructions in the GearSwap install directory for more information.
 
