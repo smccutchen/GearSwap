@@ -4,20 +4,20 @@ function get_sets()
     -- idle set: auto-refresh, movement speed, damage reduction
    sets.idle = {
         main={ name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}},
-		sub="Culminus",
-		ammo="Pemphredo Tathlum",
-		head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
-		body="Jhakri Robe +2",
-		hands="Jhakri Cuffs +1",
-		legs="Crimson Cuisses",
-		feet="Jhakri Pigaches +1",
-		neck="Eddy Necklace",
-		waist="Witful Belt",
-		left_ear="Etiolation Earring",
-		right_ear="Hermetic Earring",
-		left_ring="Vertigo Ring",
-		right_ring="Archon Ring",
-		back="Shadow Mantle",
+        sub="Culminus",
+        ammo="Pemphredo Tathlum",
+        head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
+        body="Jhakri Robe +2",
+        hands="Jhakri Cuffs +1",
+        legs="Crimson Cuisses",
+        feet="Jhakri Pigaches +1",
+        neck="Eddy Necklace",
+        waist="Witful Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Hermetic Earring",
+        left_ring="Shadow Ring",
+        right_ring="Sheltered Ring",
+        back="Shadow Mantle",
    }
 
     -- fast cast set:  We put this on before the spell is begun, then switch to one of the other sets during cast.
@@ -34,7 +34,7 @@ function get_sets()
         waist="Witful Belt",
         left_ear="Etiolation Earring",
         right_ear="Estq. Earring",
-        left_ring="Vertigo Ring",
+        left_ring="Weather. Ring",
         right_ring="Prolix Ring",
         back="Swith Cape +1",
    }
@@ -53,7 +53,7 @@ function get_sets()
 		waist="Refoccilation Stone",
 		left_ear="Friomisi Earring",
 		right_ear="Sortiarius Earring",
-		left_ring="Shiva Ring +1",
+        left_ring="Weather. Ring",
 		right_ring="Shiva Ring +1",
 		back="Toro Cape",
    }
@@ -82,17 +82,17 @@ function get_sets()
         main={ name="Grioavolr", augments={'Enh. Mag. eff. dur. +9','MND+9','Mag. Acc.+13','"Mag.Atk.Bns."+12','Magic Damage +1',}},
         sub="Enki Strap",
         ammo="Hydrocera",
-        head="Umuthi Hat",
+        head="Befouled Crown",
         body={ name="Viti. Tabard +1", augments={'Enhances "Chainspell" effect',}},
         hands="Atrophy Gloves +2",
         legs="Atrophy Tights +1",
         feet="Leth. Houseaux +1",
         neck="Melic Torque",
-        waist="Siegel Sash",
+        waist="Luminary Sash",
         left_ear="Lifestorm Earring",
         right_ear="Psystorm Earring",
-        left_ring="Sheltered Ring",
-        right_ring="Stikini Ring",
+        left_ring="Weather. Ring",
+        right_ring="Sheltered Ring",
         back={ name="Sucellos's Cape", augments={'MND+10','Mag. Acc+20 /Mag. Dmg.+20','Mag. Acc.+4','"Fast Cast"+10',}},       
    }
 
@@ -100,18 +100,18 @@ function get_sets()
    sets.heal = {
         main={ name="Tamaxchi", augments={'Occ. atk. twice+8','"Regen"+3',}},
         sub="Sors Shield",
-        ammo="Sapience Orb",
+        ammo="Hydrocera",
         head={ name="Kaykaus Mitra", augments={'MP+60','"Cure" spellcasting time -5%','Enmity-5',}},
         body={ name="Kaykaus Bliaut", augments={'MP+60','"Cure" potency +5%','"Conserve MP"+6',}},
         hands={ name="Kaykaus Cuffs", augments={'MP+60','"Conserve MP"+6','"Fast Cast"+3',}},
         legs={ name="Kaykaus Tights", augments={'MP+60','"Cure" spellcasting time -5%','Enmity-5',}},
         feet={ name="Kaykaus Boots", augments={'Mag. Acc.+15','"Cure" potency +5%','"Fast Cast"+3',}},
-        neck="Melic Torque",
+        neck="Nodens Gorget",
         waist="Acerbic Sash +1",
         left_ear="Roundel Earring",
         right_ear="Estq. Earring",
-        left_ring="Janniston Ring",
-        right_ring="Ephedra Ring",
+        left_ring="Stikini Ring",
+        right_ring="Sirona's Ring",
         back="Pahtli Cape",
    }
 
@@ -224,13 +224,33 @@ function equip_enhancing(spell)
     if converted then
        windower.add_to_chat(8,'[Enhancing - Convert]')
        equip(sets.enhancing,sets.convert)
-   else
-        windower.add_to_chat(8,'[Enhancing]')
-       if spell.name == 'Stoneskin' then
-           equip(sets.enhancing,{neck="Stone Gorget"})
-       else
-            equip(sets.enhancing)
-       end
+    else     
+        -- modify stoneskin   
+        if spell.name == 'Stoneskin' then
+            windower.add_to_chat(8,'[Enhancing - Stoneskin]')
+            equip(sets.enhancing,{
+                    neck="Nodens Gorget",
+                    head="Umuthi Hat",
+                    waist="Siegel Sash"})
+        else
+            -- modify refresh
+            if spell.name == 'Refresh' or spell.name == 'Refresh II' or spell.name == 'Refresh III' then
+                windower.add_to_chat(8,'[Enhancing - Refresh]')
+                equip(sets.enhancing,{legs="Leth. Fuseau +1"})
+            else
+                -- modify phalanx
+                if spell.name == 'Phalanx' or spell.name == 'Phalanx II' then
+                    windower.add_to_chat(8,'[Enhancing - Phalanx]')
+                    equip(sets.enhancing,{
+                        main="Egeking",
+                        sub="Thuellaic Ecu +1"})
+                else
+                    -- equip base enhancing set
+                    equip(sets.enhancing)
+                    windower.add_to_chat(8,'[Enhancing]')
+                end
+            end
+        end
     end
 end
 
