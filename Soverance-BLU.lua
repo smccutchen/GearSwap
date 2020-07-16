@@ -174,8 +174,8 @@ function get_sets()
     }
     
     sets.Idle['STP'] = {
-        main="Vajra",
-        sub="Twashtar",
+        -- main="Vajra",
+        -- sub="Twashtar",
         ammo="Ginsen",
         head="Meghanada Visor +1",
         body={ name="Herculean Vest", augments={'Accuracy+21','Crit. hit damage +5%','DEX+9',}},

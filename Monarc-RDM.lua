@@ -4,6 +4,7 @@ function get_sets()
     -- idle set: auto-refresh, movement speed, damage reduction
    sets.idle = {
         main={ name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}},
+        -- main="Nobilis",
         sub="Culminus",
         ammo="Pemphredo Tathlum",
         head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
@@ -20,6 +21,26 @@ function get_sets()
         right_ring="Defending Ring",
         back="Shadow Mantle",
    }
+
+   sets.craft = {
+        main={ name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}},
+        -- main="Nobilis",
+        sub="Culminus",
+        ammo="Pemphredo Tathlum",
+        head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
+        body="Jhakri Robe +2",
+        --body="Gyve Doublet",
+        hands="Jhakri Cuffs +2",
+        legs="Crimson Cuisses",
+        feet="Jhakri Pigaches +1",
+        neck="Eddy Necklace",
+        waist="Velocious Belt",
+        left_ear="Etiolation Earring",
+        right_ear="Hermetic Earring",
+        left_ring="Shadow Ring",
+        right_ring="Defending Ring",
+        back="Shadow Mantle",
+    }
 
     -- fast cast set:  We put this on before the spell is begun, then switch to one of the other sets during cast.
    sets.fc = {

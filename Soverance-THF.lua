@@ -270,6 +270,24 @@ function get_sets()
         left_ring="Rahab Ring",
         right_ring="Weather. Ring +1",
     }
+
+    sets.Crafting = {
+        main="Caduceus",
+        sub="Toreutic Shield",
+        ammo="Staunch Tathlum",
+        head="Shaded Specs.",
+        body="Goldsmith's Smock",
+        hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+        legs="Pill. Culottes +1",
+        feet="Jute Boots +1",
+        neck="Goldsm. Torque",
+        waist="Flume Belt +1",
+        left_ear="Etiolation Earring",
+        right_ear="Ethereal Earring",
+        left_ring="Orvail Ring",
+        right_ring="Craftmaster's Ring",
+        back="Shadow Mantle",
+    }
         
     sets.frenzy = {head="Frenzy Sallet"}
     
