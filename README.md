@@ -100,11 +100,11 @@ Once you've modified the recipes.lua, you must reload the 'craft' add-on.  In th
 
 Now you can use the add-on for automated crafting.  In the console, enter:
 
-`//craft make {[ your_recipe_name ]}`
+`//craft make {[ your_recipe_name ]} {{ number_to_make }}`
 
-for example, if you made a recipe called "Desynth" you would enter:   `//craft make Desynth`
+for example, if you made a recipe called "Desynth", and wanted to perform the synth 20 times, you would enter:   `//craft make Desynth 20`
 
-With the most recent crafting command having been run via the 'craft' add-on, you can automate the rest of your crafting with the 'repeat' switch:
+With the most recent crafting command having been run via the 'craft' add-on, you can automate the rest of your crafting with the 'repeat' switch (sometimes this doesn't seem to work correctly):
 
 `//craft repeat 48`
 

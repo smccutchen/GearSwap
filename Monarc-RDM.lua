@@ -3,8 +3,8 @@ function get_sets()
  
     -- idle set: auto-refresh, movement speed, damage reduction
    sets.idle = {
-        main={ name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}},
-        -- main="Nobilis",
+        -- main={ name="Emissary", augments={'Mag. Acc.+15','"Mag.Atk.Bns."+20','"Refresh"+1',}},
+        main="Almace",
         sub="Culminus",
         ammo="Pemphredo Tathlum",
         head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
@@ -182,6 +182,8 @@ function get_sets()
     
     -- gear for melee stance: haste, accuracy, attack
    sets.engaged = {
+        main="Almace",
+        sub="Culminus",
         ammo="Ginsen",
         head={ name="Viti. Chapeau +1", augments={'Enhances "Dia III" effect','Enhances "Slow II" effect',}},
         body="Atrophy Tabard +1",
