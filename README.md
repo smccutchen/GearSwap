@@ -1,25 +1,107 @@
 # FFXI GearSwap
 
-These files are used to help change gear while playing Final Fantasy XI.  They are specifically tuned for my characters, Soverance and Monarc on the Siren server, though you can easily modify them to work for your characters as well.
+These files are used to help automate equipment changes while playing Final Fantasy XI.  They are specifically tuned for my characters, Soverance and Monarc on the Siren server, though you can easily modify them to work for your characters as well.
 
-To use these files requires Windower, a third-party application to interface with FFXI.  Specifically, this directory reflects the following directory on your local system:
+# Requirements
+
+* An installed and updated official version of Final Fantasy XI
+* * http://www.playonline.com/ff11us/download/media/install_win.html
+* Windower 4 (stable)
+* * https://docs.windower.net/
+
+# FFXI Config Settings
+This is an installed app you must launch prior to starting FFXI.
+
+* Window Mode:  Borderless Window
+* Resolution: 1920 x 1080
+* Play opening movie on startup = NO
+
+# FFXI In-Game Settings
+
+## Backup / Restore Macros from official server
+I dunno if the below is necessary anymore, there's an options menu accessible on the character select screen now.
+```
+On the character selection screen, highlight the character for which you wish to backup/restore data, and press the following keys:
+
+Backup:  Shift + Alt + Ctrl + B
+
+Restore : Shift + Alt + Ctrl +R
+```
+## General
+
+* Inventory - Type 1
+* Inventory - Auto Sort = ON
+
+## Chat Filters
+* Any messages for "others" or "NPCs"
+
+## Window Settings
+* Window Type = 6
+
+## Misc. 3
+* Area Display = ON
+* Status Icons - Timer Display = ON
+* Status Icons - Party Display = ON
+
+## Global
+* Language Filter = OFF
+* Auto-Disconnect = OFF
+
+# Windower Profile Config
+* Region = Auto-Detect
+* Resolution = 3840 x 2160
+* Window Mode = Borderless Window
+* UI Scale = 2x
+* Super Sampling = ON
+* Bump Mapping = OFF (use ambient lighting instead, F11 key in-game)
+
+# Recommended Windower Extensions
+
+## Addons
+
+https://docs.windower.net/addons/
+
+* Craft   
+* Distance  
+* GearSwap  
+* TargetInfo (specific use case)
+* Timestamp  (best for HNM ToD)
+* TParty  
+
+## Plugins
+
+https://docs.windower.net/plugins/
+
+* AutoExec   
+* DelayMeNot 
+* Guildwork   
+* WinControl
+
+# GearSwap Configuration
+
+This repository reflects the following installation directory on your local system:
 
 `..\Windower\addons\GearSwap\data`
 
-If you're new to GearSwap, you can get a quick crash course from this reddit post:
+By default, GearSwap will search within subfolders of the current character name.
 
-https://www.reddit.com/r/ffxi/comments/at3bxq/gearswap_for_idiots/egyoivh/
+You can then use the commands found on the [GearSwap Documentation](https://docs.windower.net/addons/gearswap/) to load the files in-game.  For example, the following command would load the RDM template when run inside Monarc's windower console:
 
-Check out the beta examples and instructions in the GearSwap install directory for more information.
+`gs load RDM`
+
+If you're new to GearSwap, you can get a quick crash course from [this reddit post](https://www.reddit.com/r/ffxi/comments/at3bxq/gearswap_for_idiots/egyoivh/):
+
+You can also check out the beta examples and instructions in the GearSwap install directory for more information.
 
 **Be aware of four things:**
 
-1. If Gearswap fails to execute a command and does not detect this, it will currently block all input until it is reloaded.
+1. If Gearswap fails to execute a command and does not detect it, the addon will likely block all input until it is reloaded.
 2. verify_equip() is not very robust, and in Delve it tends to not be usable. cast_delay() is recommended instead.
 3. Logging is on by default. You can turn it off towards the top of gearswap.
 
 Basic function scaffolding for a new file is shown below:
 
+```
 -----------------------------------------------------------------------------------
 
 function get_sets()
@@ -53,23 +135,32 @@ function aftercast(spell)
 end
 
 -----------------------------------------------------------------------------------
+```
 
-
-
-# other FFXI Windower useful commands
+# Other FFXI / Windower Tidbits
 
 * hit insert to bring up windower console
 
-## WINCONTROL
-Move the screen over to the left monitor!
+## WinControl
+Move the screen over to another monitor!
 
-* 4k resolution
+* 4k resolution, far left screen
 `wincontrol move -3840 0`
 
-* 2k resolution
+* 2k resolution, far left screen
 `wincontrol move -2560 0`
 
-## GRAPHICAL FIXES
+## High DPI resolution fix
+Sometimes when you load Windower on a high DPI (4k) monitor, the FFXI window will be massively oversized due to the resolution scaling setting in Windows.
+
+To resolve this, locate the following files:
+
+`../SquareEnix/FINAL FANTASY XI/polboot.exe`
+`../SquareEnix/PlayOnlineViewer/pol.exe`
+
+For each file, open `Properties -> Compatibility -> Change High DPI Settings` and enable the option to `Override high DPI scaling behavior. Scaling performed by "Application"`
+
+## Graphical Crash Fixes
 Crashes are common on newer operating systems, since FFXI was built originally to target DirectX 8.  Mods are available to translate the DX8 calls into a modern API like DX9 or DX11.  
 See this link for more info:
 
@@ -77,7 +168,9 @@ https://www.bg-wiki.com/bg/User:Sitara/GraphicsEnhancement#DirectX8_Proxies
 
 **NOTE:**  this doesn't seem to fix the crashes caused by a UAC prompt, or when a resolution change forces a display adapter reset (such as when plugging in a second monitor while the game window is open)
 
-## CRAFTING AUTOMATION
+If your game is crashing because of a UAC prompt, then the simple fix is to disable UAC..........
+
+## Crafting Automation
 Crafting in FFXI is slow as shit.  When you're faced with crafting a ton of the same items over and over again... well, it's just a dreadful task.  The Windower Add-On "craft" can help automate it, and relieve much of this pain.
 
 https://docs.windower.net/addons/craft/
@@ -117,8 +210,10 @@ In some cases, you can modify enemy mob names directly in the hex files.  This c
 
 ### Area DAT File Reference
 
-#### ====== Original Areas ======
+<details>
+    <summary>====== Original Areas ======</summary>
 
+```
 ROM/26/37.dat -- West Ronfaure
 
 ROM/26/38.dat -- East Ronfaure
@@ -284,9 +379,14 @@ ROM/27/55.dat -- Port Jeuno
 ROM/27/57.dat -- Selbina
 
 ROM/27/58.dat -- Mhaura
+```
 
-#### ====== Rise of the Zilart Areas ======
+</details>
 
+<details>
+    <summary>====== Rise of the Zilart Areas ======</summary>
+
+```
 ROM2/13/95.dat -- Cape Teriggan
 
 ROM2/13/96.dat -- Eastern Altepa Desert
@@ -376,9 +476,14 @@ ROM2/14/9.dat -- Kazham
 ROM2/14/10.dat -- Hall of the Gods
 
 ROM2/14/11.dat -- Norg
+```
 
-#### ====== Chain of Promathia Areas ======
+</details>
 
+<details>
+    <summary>====== Chain of Promathia Areas ======</summary>
+
+```
 ROM3/2/111.dat -- Phanauet Channel
 
 ROM3/2/112.dat -- Carpenters' Landing
@@ -464,9 +569,14 @@ ROM3/3/24.dat -- Dynamis - Tavnazia
 ROM3/3/25.dat -- Diorama Abdhaljs-Ghelsba
 
 ROM3/3/26.dat -- Abdhaljs Isle-Purgonorgo
+```
 
-#### ====== Treasure of Aht Urgan ======
+</details>
 
+<details>
+    <summary>====== Treasure of Aht Urgan ======</summary>
+
+```
 ROM4/1/45.dat -- Open sea route to Al Zahbi
 
 ROM4/1/46.dat -- Open sea route to Mhaura
@@ -532,3 +642,6 @@ ROM4/1/76.dat -- Nyzul Isle
 ROM4/1/77.dat -- Hazhalm Testing Grounds
 
 ROM4/1/78.dat -- Caedarva Mire
+```
+
+</details>
