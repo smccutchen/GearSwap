@@ -254,7 +254,7 @@ function get_sets()
     }
     
     -- this command sets the default macro book/set when loading this file
-    send_command('input /macro book 3;wait .1;input /macro set 2')
+    send_command('input /macro book 1;wait .1;input /macro set 1')
     
         
     sets.FastCast = {
