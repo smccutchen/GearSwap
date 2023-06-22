@@ -19,14 +19,9 @@ This is an installed app you must launch prior to starting FFXI.
 # FFXI In-Game Settings
 
 ## Backup / Restore Macros from official server
-I dunno if the below is necessary anymore, there's an options menu accessible on the character select screen now.
-```
-On the character selection screen, highlight the character for which you wish to backup/restore data, and press the following keys:
+In the latest version of FFXI, you can simply select an option on the character select screen to save your restore your character config from the official Square Enix servers.  You used to have to do this with a hidden keyboard command, but not anymore!
 
-Backup:  Shift + Alt + Ctrl + B
 
-Restore : Shift + Alt + Ctrl +R
-```
 ## General
 
 * Inventory - Type 1
@@ -92,6 +87,14 @@ You can then use the commands found on the [GearSwap Documentation](https://docs
 If you're new to GearSwap, you can get a quick crash course from [this reddit post](https://www.reddit.com/r/ffxi/comments/at3bxq/gearswap_for_idiots/egyoivh/):
 
 You can also check out the beta examples and instructions in the GearSwap install directory for more information.
+
+```
+The absolute easiest way to create a gearset will be to equip everything in game (all 16 slots), and then use the gearswap "Export" command by typing the following command into your in-game chat bar:
+
+//gs export
+
+This will export a file i-nto your "../Windower/addons/Gearswap/data/exports/" directory that allows you to simply copy and paste the gear (with appropriate syntax, naming, and even augments) into your new set.
+```
 
 **Be aware of four things:**
 
@@ -195,13 +198,98 @@ Now you can use the add-on for automated crafting.  In the console, enter:
 
 `//craft make {[ your_recipe_name ]} {{ number_to_make }}`
 
-for example, if you made a recipe called "Desynth", and wanted to perform the synth 20 times, you would enter:   `//craft make Desynth 20`
+for example, if you made a recipe called "Desynth 2", and wanted to perform the synth 20 times, you would enter:   `//craft make "Desynth 2" 20`
 
 With the most recent crafting command having been run via the 'craft' add-on, you can automate the rest of your crafting with the 'repeat' switch (sometimes this doesn't seem to work correctly):
 
 `//craft repeat 48`
 
 where '48' is the number of crafting attempts you wish to repeat.  Make sure you have enough items and inventory space!
+
+## GuildWork Login
+This is the "new" method for connecting your FFXI account to you FFXIAH.com profile. I'm not sure how effective it still is, according to the forums it's occasionally broken as fuck.
+
+In game login:
+
+`/gw login <username> <password>`
+
+## Gameplay Tips
+
+### Alexandrite Farming
+Do Salvage, specifically Arrapago Remnants II.  Essentially you unlock all your gear + stats, spawn the Dvergr on Floor 4, and battle the Bloodthirsty Dweorg as the final boss for a 100% drop rate on a Linen Coin Purse (1-99 alex).  See the [BGWiki article](https://www.bg-wiki.com/ffxi/Silver_Sea_Remnants_II) for more specific details.
+
+### Abyssea 
+NM key item farming requires a red proc on the mob in question.
+
+* Greatsword    = Freezebite (ice)
+* Staff         = Earth Crusher (earth)
+* Polearm       = Raiden Thrust (lightning)
+* Scythe        = Shadow of Death (dark)
+
+### Dynamis
+Best to farm CoP dynamis zones, like Buburimu/Qufim/Valkurm.
+
+Go as THF/DNC.  Keep subjobs unlocked.  Equip low iLvl weapons.  Empty your inventory, 50+ free slots.  
+
+If you have all 3 DNC trusts, you can go with subjobs locked, which allows for a white proc with 100% chance on a hundred piece.  You'll be relying mostly on the trusts to proc in this case.
+
+First thing once inside, get all 5 time extensions.  This is required before attempting red procs, as they will not appear otherwise.
+
+In Buburimu, you should also kill all the dragons, as they have high drop rates on hundred pieces.
+
+Attempt JA procs, with the following abilities.  The order listed here is their cooldown order for optimal timing.
+
+* Box Step  (primary JA to use for procs)
+* Violent Flourish
+* Box Step
+* Bully
+* Box Step
+* Mug
+* Box Step
+* Despoil
+* Box Step
+* Violent Flourish
+* Box Step
+
+Once proc'd, go ahead and immediately kill the mob with a weapon skill.
+
+Buburimu camp route:
+
+* 00:00 - 08:00 Crawlers, Ravens, Urganites
+* 08:00 - 16:00 Mandies, Bunnies, Efts
+* 16:00 - 24:00 Scorpions, Crabs, Dhalmels
+
+Typically the route goes Raven -> Mandy -> Scorpions
+
+You need sneak/invis macro.
+
+For trusts you typically want to use the DNC trusts, which are:
+
+* Uka Totlihn  (already have on sov)
+* Mumor  (Sunbreeze Festival, should be in August)
+* Mayakov  (already have on sov)
+* Cherukiki
+* Yoran-Oran
+
+## Ultimate Weapon Progress
+Soverance
+
+* Vajra (119)
+* Mandau (119 afterglow)
+* Kartika (75, need to do Glavoids to turn it into a Twashtar)
+* Tizona (119 afterglow)
+* Almace (119 afterglow)
+* Excalibur (75)
+* Ukonvasara (90)
+* Apocalypse (75)
+* Kikoku (80)
+* Amanomurakumo (75)
+* Yoichinoyumi (75)
+* Annihilator (99)
+* Gjallarhorn (75)
+* Aegis (99)
+* Ochain (90)
+* Toreutic Shield (stage 4, 24.2%)
 
 ## AREA ZONE DAT FILE HEX DATA 
 In some cases, you can modify enemy mob names directly in the hex files.  This can make placeholder enemies more easily identified via widescan while in game.  You need to open the DAT files in a hex editor, and modify them accordingly.  The game must be reloaded after a DAT file is modified for the changes to take effect.  The following list is the DAT file locations and their corresponding zone names.  Find these files in the base FFXI installation directory:
@@ -642,6 +730,126 @@ ROM4/1/76.dat -- Nyzul Isle
 ROM4/1/77.dat -- Hazhalm Testing Grounds
 
 ROM4/1/78.dat -- Caedarva Mire
+```
+
+</details>
+
+## TRUST COMPLETION CHECKLIST
+This checklist only looks at the Soverance character - I don't care about trusts on Monarc or any other character.
+
+<details>
+    <summary>====== Treasure of Aht Urgan ======</summary>
+
+```
+| Cherukiki         = Complete
+| Ferreous Coffin   = COMPLETE
+| Karaha-Baruha     = COMPLETE
+| Kupipi            = COMPLETE
+| Mihli Aliapoh     = COMPLETE
+| Ygnas             = 
+| Amchuchu          = COMPLETE
+| Ark Angel EV      = COMPLETE
+| Ark Angel HM      = 
+| August            = COMPLETE
+| Curilla           = COMPLETE
+| Gessho            = COMPLETE
+| Mnejing           = COMPLETE
+| Rahal             = COMPLETE
+| Rughadjeen        = COMPLETE
+| Trion             = COMPLETE
+| Valaineral        = COMPLETE
+| Arciela           = COMPLETE
+| Arciela II        = COMPLETE
+| Joachim           = COMPLETE
+| King of Hearts    = COMPLETE
+| Koru-Moru         = COMPLETE
+| Qultada           = COMPLETE
+| Ulmia             = COMPLETE
+| Adelheid          = COMPLETE
+| Ajido-Marujido    = COMPLETE
+| Ark Angel TT      = 
+| Domina Shantotto  = COMPLETE
+| Gadalar           = 
+| Ingrid            = 
+| Kayeel-Payeel     = COMPLETE
+| Kukki-Chebukki    = 
+| Leonoyne          = 
+| Mumor II          = 
+| Ovjang            = COMPLETE
+| Robel-Akbel       = COMPLETE
+| Rosulatia         = COMPLETE
+| Shantotto         = COMPLETE
+| Shantotto II      = COMPLETE
+| Ullegore          = COMPLETE
+| Elivira           = 
+| Makki-Chebukki    = COMPLETE
+| Margret           = 
+| Najelith          = COMPLETE
+| Semih Lafihna     = COMPLETE
+| Tenzen II         = COMPLETE
+| Brygid            = COMPLETE
+| Kupofried         = COMPLETE
+| Kuyin Hathdenna   = COMPLETE
+| Moogle            = COMPLETE
+| Sakura            = COMPLETE
+| Star Sibyl        = COMPLETE
+| Abenzio           = COMPLETE
+| Abquhbah          = COMPLETE
+| Aldo              = COMPLETE
+| Areuhat           = COMPLETE
+| Ark Angel GK      = COMPLETE
+| Ark Angel MR      = 
+| Ayame             = COMPLETE
+| Babban Mheillea   = 
+| Balamor           = COMPLETE
+| Chacharoon        = 
+| Cid               = COMPLETE
+| Darrcuiln         = COMPLETE
+| Excenmille        = COMPLETE
+| Excenmille (S)    = 
+| Fablinix          = 
+| Gilgamesh         = COMPLETE
+| Halver            = COMPLETE
+| Ingrid II         = COMPLETE
+| Iroha             = COMPLETE
+| Iroha II          = COMPLETE
+| Iron Eater        = COMPLETE
+| Klara             = 
+| Lehko Habhoka     = COMPLETE
+| Lhe Lhangavo      = COMPLETE
+| Lhu Mhakaracca    = COMPLETE
+| Lilisette         = COMPLETE
+| Lilisette II      = COMPLETE
+| Lion              = COMPLETE
+| Lion II           = COMPLETE
+| Luzaf             = COMPLETE
+| Maat              = COMPLETE
+| Maximilian        = 
+| Mayakov           = COMPLETE
+| Mildaurion        = COMPLETE
+| Monberaux         =
+| Morimar           = COMPLETE
+| Mumor             = 
+| Naja Salaheem     = COMPLETE
+| Naji              = COMPLETE
+| Nanaa Mihgo       = COMPLETE
+| Nashmeira         = COMPLETE
+| Nashmeira II      = COMPLETE
+| Noillurie         = COMPLETE
+| Prishe            = 
+| Prishe II         = COMPLETE
+| Rainemard         = COMPLETE
+| Romaa Mihgo       = 
+| Rongelouts        = COMPLETE
+| Selh'teus         = COMPLETE
+| Shikaree Z        =
+| Tenzen            = COMPLETE
+| Teodor            = COMPLETE
+| Uka Totlihn       = COMPLETE
+| Volker            = COMPLETE
+| Zazarg            = COMPLETE
+| Zeid              = COMPLETE
+| Zeid II           = COMPLETE
 ```
 
 </details>

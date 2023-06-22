@@ -201,9 +201,9 @@ function get_sets()
         back="Archon Cape",
     }
     
-    Idle_Set_Names = {'Normal','MDT',"STP"}
+    Idle_Set_Names = {'Default','MDT',"STP","Crafting"}
     sets.Idle = {}
-    sets.Idle.Normal = {
+    sets.Idle.Default = {
         ammo="Staunch Tathlum",
         head={ name="Adhemar Bonnet", augments={'DEX+10','AGI+10','Accuracy+15',}},
         body="Mekosu. Harness",
@@ -235,9 +235,7 @@ function get_sets()
         back="Archon Cape",
     }
     
-    sets.Idle['STP'] = {
-        main="Vajra",
-        sub="Twashtar",
+    sets.Idle.STP = {
         ammo="Ginsen",
         head="Meghanada Visor +1",
         body={ name="Herculean Vest", augments={'Accuracy+21','Crit. hit damage +5%','DEX+9',}},
@@ -251,6 +249,24 @@ function get_sets()
         left_ring="Apate Ring",
         right_ring="Rajas Ring",
         back={ name="Toutatis's Cape", augments={'STR+20','Accuracy+20 Attack+20','"Store TP"+10',}},
+    }
+
+    sets.Idle.Crafting = {
+        main="Mandau",
+        sub="Toreutic Shield",
+        ammo="Per. Lucky Egg",
+        head="Shaded Specs.",
+        body="Goldsmith's Smock",
+        hands={ name="Plun. Armlets +1", augments={'Enhances "Perfect Dodge" effect',}},
+        legs="Pill. Culottes +1",
+        feet="Jute Boots +1",
+        neck="Goldsm. Torque",
+        waist="Sailfi Belt",
+        left_ear="Jupiter's Pearl",
+        right_ear="Jupiter's Pearl",
+        left_ring="Orvail Ring",
+        right_ring="Craftmaster's Ring",
+        back="Archon Cape",
     }
     
     -- this command sets the default macro book/set when loading this file
