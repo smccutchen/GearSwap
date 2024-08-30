@@ -44,11 +44,15 @@ In the latest version of FFXI, you can simply select an option on the character 
 
 # Windower Profile Config
 * Region = Auto-Detect
-* Resolution = 3840 x 2160
+* Resolution = 3840 x 2160  (4K, us 2x UI scale)
+* Resolution = 1920 x 1080  (1080p, use 1x UI scale)
 * Window Mode = Borderless Window
-* UI Scale = 2x
+* UI Scale = 2x 
 * Super Sampling = ON
 * Bump Mapping = OFF (use ambient lighting instead, F11 key in-game)
+
+* NOTE 1:  Use a standard resolution (1080p or 4k). Ultrawide or non-standard resolutions look terrible/stretched.
+* NOTE 2:  If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
 
 # Recommended Windower Extensions
 
@@ -153,6 +157,9 @@ Move the screen over to another monitor!
 * 2k resolution, far left screen
 `wincontrol move -2560 0`
 
+* ultrawide 1440, bottom right screen
+`wincontrol move 1520 320`
+
 ## High DPI resolution fix
 Sometimes when you load Windower on a high DPI (4k) monitor, the FFXI window will be massively oversized due to the resolution scaling setting in Windows.
 
@@ -169,9 +176,11 @@ See this link for more info:
 
 https://www.bg-wiki.com/bg/User:Sitara/GraphicsEnhancement#DirectX8_Proxies
 
-**NOTE:**  this doesn't seem to fix the crashes caused by a UAC prompt, or when a resolution change forces a display adapter reset (such as when plugging in a second monitor while the game window is open)
+**NOTE #1**  this doesn't seem to fix the crashes caused by a UAC prompt, or when a resolution change forces a display adapter reset (such as when plugging in a second monitor while the game window is open)
 
 If your game is crashing because of a UAC prompt, then the simple fix is to disable UAC..........
+
+**NOTE #2** If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
 
 ## Crafting Automation
 Crafting in FFXI is slow as shit.  When you're faced with crafting a ton of the same items over and over again... well, it's just a dreadful task.  The Windower Add-On "craft" can help automate it, and relieve much of this pain.
