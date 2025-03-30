@@ -44,15 +44,15 @@ In the latest version of FFXI, you can simply select an option on the character 
 
 # Windower Profile Config
 * Region = Auto-Detect
-* Resolution = 3840 x 2160  (4K, us 2x UI scale)
+* Resolution = 3840 x 2160  (4K, use 2x UI scale)
 * Resolution = 1920 x 1080  (1080p, use 1x UI scale)
 * Window Mode = Borderless Window
 * UI Scale = 2x 
 * Super Sampling = ON
 * Bump Mapping = OFF (use ambient lighting instead, F11 key in-game)
 
-* NOTE 1:  Use a standard resolution (1080p or 4k). Ultrawide or non-standard resolutions look terrible/stretched.
-* NOTE 2:  If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
+* **NOTE 1:**  Use a standard resolution (1080p or 4k). Ultrawide or non-standard resolutions look terrible/stretched.
+* **NOTE 2:**  If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
 
 # Recommended Windower Extensions
 
@@ -149,7 +149,7 @@ end
 * hit insert to bring up windower console
 
 ## WinControl
-Move the screen over to another monitor!
+Move the screen over to another monitor!  (These are examples for different monitor configurations I've used - yours may differ)
 
 * 4k resolution, far left screen
 `wincontrol move -3840 0`
@@ -176,11 +176,11 @@ See this link for more info:
 
 https://www.bg-wiki.com/bg/User:Sitara/GraphicsEnhancement#DirectX8_Proxies
 
-**NOTE #1**  this doesn't seem to fix the crashes caused by a UAC prompt, or when a resolution change forces a display adapter reset (such as when plugging in a second monitor while the game window is open)
+* **NOTE #1**  this doesn't seem to fix the crashes caused by a UAC prompt, or when a resolution change forces a display adapter reset (such as when plugging in a second monitor while the game window is open)
 
 If your game is crashing because of a UAC prompt, then the simple fix is to disable UAC..........
 
-**NOTE #2** If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
+* **NOTE #2** If your monitor has G-SYNC / Adaptive Sync, you should disable it, otherwise you may experience crashes due to display adapter resets
 
 ## Crafting Automation
 Crafting in FFXI is slow as shit.  When you're faced with crafting a ton of the same items over and over again... well, it's just a dreadful task.  The Windower Add-On "craft" can help automate it, and relieve much of this pain.
@@ -217,6 +217,8 @@ where '48' is the number of crafting attempts you wish to repeat.  Make sure you
 
 ## GuildWork Login
 This is the "new" method for connecting your FFXI account to you FFXIAH.com profile. I'm not sure how effective it still is, according to the forums it's occasionally broken as fuck.
+
+* **NOTE:** This is confirmed completely broken as of April 2023 - there is no longer an acceptable way to update your FFXIAH.com profile.
 
 In game login:
 
@@ -747,7 +749,7 @@ ROM4/1/78.dat -- Caedarva Mire
 This checklist only looks at the Soverance character - I don't care about trusts on Monarc or any other character.
 
 <details>
-    <summary>====== Treasure of Aht Urgan ======</summary>
+    <summary>====== Trust List ======</summary>
 
 ```
 | Cherukiki         = Complete
