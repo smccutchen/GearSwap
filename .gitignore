@@ -43,3 +43,9 @@ Thumbs.db
 # Custom Application-specific files #
 ######################
 export/
+
+# Claude CLI
+.claude/*
+!.claude/settings.json
+!.claude/commands/
+!.claude/commands/**
