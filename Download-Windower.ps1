@@ -22,7 +22,7 @@ try
         Write-Host "Created install directory: $InstallDir"
     }
 
-    $Url = "http://update.windower.net/live/Windower.exe"
+    $Url = "https://update.windower.net/live/Windower.exe"
     $OutFile = Join-Path $InstallDir "Windower.exe"
 
     if (Test-Path $OutFile)
@@ -41,7 +41,9 @@ try
     Write-Host "Downloading Windower ..."
 
     # Use HttpClient for download progress tracking
-    $HttpClient = New-Object System.Net.Http.HttpClient
+    $Handler = New-Object System.Net.Http.HttpClientHandler
+    $Handler.AllowAutoRedirect = $true
+    $HttpClient = New-Object System.Net.Http.HttpClient($Handler)
     $Response = $HttpClient.GetAsync($Url, [System.Net.Http.HttpCompletionOption]::ResponseHeadersRead).Result
     $Response.EnsureSuccessStatusCode() | Out-Null
     $TotalBytes = $Response.Content.Headers.ContentLength
