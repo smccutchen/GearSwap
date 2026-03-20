@@ -73,7 +73,6 @@ https://docs.windower.net/plugins/
 
 * AutoExec   
 * DelayMeNot 
-* Guildwork   
 * WinControl
 
 # GearSwap Configuration

@@ -1,0 +1,15 @@
+{
+    "addons": [
+        "craft",
+        "distance",
+        "GearSwap",
+        "targetinfo",
+        "timestamp",
+        "TParty"
+    ],
+    "plugins": [
+        "AutoExec",
+        "DelayMeNot",
+        "WinControl"
+    ]
+}
