@@ -160,38 +160,18 @@ try
         Write-Host "Installed addon '$Addon'"
     }
 
-    # Configure plugins for auto-load via init.txt
-    # Plugins are managed by the Windower launcher, but we can tell it which ones to load
-    $InitFile = Join-Path $ScriptsDir "init.txt"
-    $InitLines = @()
+    # Deploy custom init.txt for plugin auto-load configuration
+    $RepoInitFile = Join-Path $PSScriptRoot "init.txt"
+    $DestInitFile = Join-Path $ScriptsDir "init.txt"
 
-    if (Test-Path $InitFile)
+    if (Test-Path $RepoInitFile)
     {
-        $InitLines = @(Get-Content $InitFile)
+        Copy-Item -Path $RepoInitFile -Destination $DestInitFile -Force
+        Write-Host "Deployed init.txt to $DestInitFile"
     }
-
-    $Changed = $false
-
-    foreach ($Plugin in $Config.plugins)
+    else
     {
-        $LoadCommand = "load $Plugin"
-
-        if ($InitLines -notcontains $LoadCommand)
-        {
-            $InitLines += $LoadCommand
-            Write-Host "Added plugin '$Plugin' to auto-load (init.txt)"
-            $Changed = $true
-        }
-        else
-        {
-            Write-Host "Plugin '$Plugin' already in init.txt"
-        }
-    }
-
-    if ($Changed)
-    {
-        $InitLines | Set-Content $InitFile
-        Write-Host "Updated $InitFile"
+        Write-Warning "init.txt not found in repo root: $RepoInitFile"
     }
 
     ##############################
