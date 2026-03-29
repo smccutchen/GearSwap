@@ -1,0 +1,45 @@
+keyboard_allowmmf 1
+
+//Set console variables
+console_position 15 50
+console_color 255 255 0 0
+console_displayactivity 1
+console_fadedelay 3500
+console_chatopen 1
+console_screendir screenshots
+
+//Set game variables
+game_forceambientlight 1
+game_ambientlight 255 120 120 120
+game_gamma 50
+game_allowsetcursorpos 0
+game_exittype 1
+game_exitprompt 1
+game_allowresize 0
+
+//Set general variables
+//showfps 1
+// FPS Position - Use -75 1 to position it on the top right corner.
+fps_position 5 5
+
+drawdistance set 10
+//Bind keys
+//Bind syntax is "bind <key> <up> <command>
+// ^ represents control- and ! is alt, eg !1 is alt-1
+bind ^@!f9 drawdistance set 10
+bind ^@!f10 drawdistance set 1
+bind ^@!f1 game_forceambientlight
+bind ^@!f11 showfps
+bind sysrq screenshot png hide
+bind ^sysrq screenshot png
+bind ^v paste
+
+//Sets ConsoleBG Background Position
+consolebg position 15 50
+consolebg size 1300 310
+
+// The below command uncaps FPS to 60.  Setting it to 0 uncaps it and setting it to 2 is the default setting of 30.
+config FrameRateDivisor 1
+
+//Load Addons
+lua load vanalytics
