@@ -33,6 +33,7 @@ bind ^@!f11 showfps
 bind sysrq screenshot png hide
 bind ^sysrq screenshot png
 bind ^v paste
+bind ^c copy
 
 //Sets ConsoleBG Background Position
 consolebg position 15 50
