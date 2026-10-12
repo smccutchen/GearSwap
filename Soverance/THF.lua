@@ -1,9 +1,9 @@
 include('organizer-lib')
+send_command('input /macro book 2;wait .1;input /macro set 1')
 
 function get_sets()
     TP_Index = 1
     Idle_Index = 1
-
     
     ta_hands = {name="Adhemar Wristbands +1"}
     acc_hands = {name="Adhemar Wristbands +1"}
@@ -269,10 +269,6 @@ function get_sets()
         back="Archon Cape",
     }
     
-    -- this command sets the default macro book/set when loading this file
-    send_command('input /macro book 1;wait .1;input /macro set 1')
-    
-        
     sets.FastCast = {
         ammo="Impatiens",
         head={ name="Herculean Helm", augments={'"Fast Cast"+6','Mag. Acc.+2',}},
